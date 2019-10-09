@@ -1,0 +1,21 @@
+{
+  "name": "sw-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "finalhandler": "^1.1.2",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "koa": "^2.8.2",
+    "koa-convert": "^1.2.0",
+    "koa-static": "^5.0.0",
+    "serve-static": "^1.14.1"
+  }
+}
