@@ -4,21 +4,29 @@
   "description": "",
   "main": "entry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "make dev",
+    "compile": "make"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.17.1",
-    "finalhandler": "^1.1.2",
-    "fs": "0.0.1-security",
-    "https": "^1.0.0",
-    "koa": "^2.8.2",
-    "koa-conditional-get": "^2.0.0",
-    "koa-convert": "^1.2.0",
-    "koa-delay": "0.0.2",
-    "koa-etag": "^3.0.0",
-    "koa-static": "^5.0.0",
-    "serve-static": "^1.14.1"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^3.2.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-serve": "^3.2.0"
   }
 }

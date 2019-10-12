@@ -1,12 +1,9 @@
-const http = require('http');
 
 const Koa = require('koa');
 const serve = require('koa-static');
 const etag = require('koa-etag');
 const conditional = require('koa-conditional-get');
 const delay = require('koa-delay');
-
-const fs = require('fs')
 
 const app = new Koa();
 
