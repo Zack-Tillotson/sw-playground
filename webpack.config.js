@@ -12,16 +12,28 @@ const envPlugin = new webpack.DefinePlugin({
   'process.env.NODE_ENV': isProdBuild ? '"production"' : '"development"'
 });
 
-const templatePlugin = new HtmlWebpackPlugin({
-  template      : './static/pageTemplate.html',
+const basePluginConfig = {
+  template      : './src/pageTemplate.html',
   hash          : false,
-  filename      : 'pageTemplate.html',
   inject        : 'body',
   minify   : {
     collapseWhitespace : true
   },
   inlineSource: '.css$',
-});
+};
+
+const templatePlugin = [
+  new HtmlWebpackPlugin({
+    ...basePluginConfig,
+    chunks: ['home'],
+    filename: 'index.html',
+  }),
+  new HtmlWebpackPlugin({
+    ...basePluginConfig,
+    chunks: ['networking'],
+    filename: 'networking/index.html',
+  }),
+];
 
 const inlinePlugin = new HtmlWebpackInlineSourcePlugin();
 
@@ -29,6 +41,8 @@ let cssLoader = isProdBuild ? MiniCssExtractPlugin.loader : 'style-loader';
 
 const config = {
   entry: {
+    home: './src/homeEntry',
+    networking: './src/networkingEntry',
   },
   mode: isProdBuild ? 'production' : 'development',
   resolve: {
@@ -37,7 +51,7 @@ const config = {
   },
   output: {
     filename: '[name]-[hash].js',
-    path: path.join(__dirname, '../public'),
+    path: path.join(__dirname, './public'),
     publicPath: isProdBuild ? '/' : 'http://localhost:8888/' // Required for webpack-serve
   },
   module: {
@@ -66,17 +80,15 @@ const config = {
       filename: '[name].[hash].css',
     }),
     envPlugin,
-    templatePlugin,
+    ...templatePlugin,
     inlinePlugin,
   ],
 };
 
 if(!isProdBuild) {
-  config.entry['atfStyles'] = './src/atfStyles';
   config.devtool = 'inline-source-map';
   config.devServer = {
     port: '8888',
-    index: 'pageTemplate.html',
     contentBase: 'static',
     proxy: {
       '**/': {
