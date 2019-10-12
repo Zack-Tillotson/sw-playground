@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SW Testing App</title>
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  App
+  <button id="load-pic">Load Image</button>
+  <img id="pic-to-load" class="hidden" />
+  <script>
+    const imageEle = document.getElementById('pic-to-load');
+    const buttonEle = document.getElementById('load-pic');
+
+    buttonEle.addEventListener('click', function() {
+      const imageUrl = 'http://placekitten.com/200/200';
+      imageEle.setAttribute('src', imageUrl);
+      imageEle.classList.remove('hidden');
+      buttonEle.classList.add('hidden');
+    })
+  </script>
+</body>
+</html>

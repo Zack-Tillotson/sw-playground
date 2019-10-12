@@ -1,18 +1,19 @@
-const https = require('https');
+const http = require('http');
 
 const Koa = require('koa');
 const serve = require('koa-static');
-const convert = require('koa-convert');
+const etag = require('koa-etag');
+const conditional = require('koa-conditional-get');
+const delay = require('koa-delay');
 
 const fs = require('fs')
 
 const app = new Koa();
-const tlsOpts = {
-  key: fs.readFileSync('./hacksparrow-key.pem'),
-  cert: fs.readFileSync('./hacksparrow-cert.pem')
-}
 
-
+app.use(conditional());
+app.use(etag());
+app.use(delay(300, 300));
 app.use(serve(__dirname + '/client'));
-https.createServer(tlsOpts, app.callback()).listen(443)
+
+http.createServer(app.callback()).listen(3001)
 

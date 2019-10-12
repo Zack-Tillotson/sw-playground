@@ -5,8 +5,18 @@
 </head>
 <body>
   <h1>Home</h1>
-  <script src="entry.js"></script>
-  <script src="page.home.js"></script>
-  <script src="sw.js"></script>
+  <navigation>
+    <a href="/">Home</a>
+  </navigation>
+  <iframe src="/app/"></iframe>
+  <section>
+    <h2>ServiceWorker Controls</h2>
+    <button id="preload-assets">Preload Assets</button>
+    <button id="sw-cache-only">Register Cache-Only SW</button>
+    <button id="sw-cache-first">Register Cache-First SW</button>
+    <button id="sw-network-first">Register Network-First SW</button>
+    <button id="sw-cache-first-with-refresh">Register Cache-First with Refresh SW</button>
+  </section>
+  <script src="controls.js"></script>
 </body>
 </html>
