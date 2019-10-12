@@ -1,16 +1,16 @@
 :root {
 
   /* Light mode */
-  --color-l-bg-light: var(--gray-light);
-  --color-l-bg-light-offset: var(--white);
-  --color-l-bg-dark: var(--gray-dark);
-  --color-l-bg-dark-offset: var(--black);
+  --color-l-bg-light: var(--white);
+  --color-l-bg-light-offset: var(--gray-light);
+  --color-l-bg-dark: var(--black);
+  --color-l-bg-dark-offset: var(--gray-darker);
   --color-l-fg-primary: var(--brand-primary);
   --color-l-fg-secondary: var(--brand-secondary);
-  --color-l-txt-primary: var(--gray-darker);
-  --color-l-txt-secondary: var(--gray-dark);
+  --color-l-txt-primary: var(--black);
+  --color-l-txt-secondary: var(--gray-darker);
   --color-l-txt-dark-primary: var(--white);
-  --color-l-txt-dark-secondary: var(--gray-light);
+  --color-l-txt-dark-secondary: var(--gray-dark);
 
   /* Dark mode */
   --color-d-bg-light: var(--black);

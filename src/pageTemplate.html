@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SW Testing</title>
+  <title>SW Playground</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <navigation>
-    <a href="/">Home</a>
-  </navigation>
+  <header class="page-nav" id="page-nav">
+    <a href="/" class="navigation__title">
+      <span class="title--minor">Learn to Code</span>
+      <span class="title--major">SW Playground</span>
+    </a>
+    <button id="nav-open" class="page-nav__toggle" aria-toggles="nav-items">
+      ☰
+    </button>
+    <button id="nav-close" class="page-nav__toggle" aria-toggles="nav-items">
+      ×
+    </button>
+    <nav class="page-nav__nav-items nav-items" id="nav-items">
+      <a href="/networking/" class="nav-items__item">
+        <strong>Feature</strong>
+        Handling network requests
+      </a>
+    </nav>
+    <script>
+      document.getElementById('nav-open').addEventListener('click', () => {
+        document.body.classList.add('nav-open');
+      });
+      document.getElementById('nav-close').addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+      });
+    </script>
+  </header>
   <section id="app">
     Page Content
   </section>

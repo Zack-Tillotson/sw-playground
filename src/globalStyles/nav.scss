@@ -1,0 +1,134 @@
+body {
+  display: grid;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  grid-template-areas:
+    "nav"
+    "content";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  @media (min-width: 800px) {
+    grid-template-areas:
+      "nav content";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.page-nav {
+  grid-area: nav;
+  padding: 0 var(--container-padding);
+  position: relative;
+
+  background: var(--color-bg-dark);
+  color: var(--color-txt-dark-primary);
+
+  a:link, a:visited {
+    color: var(--color-txt-dark-primary);
+  }
+
+  a:hover {
+    color: var(--brand-primary);
+  }
+
+  .navigation__title {
+    display: block;
+    max-width: calc(100vw - var(--container-padding) * 4.5);
+
+    margin: var(--container-padding) auto;
+    font-family: var(--title-font-family);
+    font-size: 1.5rem;
+    text-align: center;
+
+    @media(min-width: 800px) {
+      font-size: 2rem;
+    }
+
+    .title--minor {
+      display: none;
+
+      @media(min-width: 800px) {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--color-txt-dark-secondary);
+      }
+    }
+
+    .title--major {
+      display: block;
+    }
+  }
+
+  #nav-close {
+    display: none;
+  }
+
+  .page-nav__toggle {
+    position: absolute;
+    left: var(--container-padding);
+    top: var(--container-padding);
+    background: none;
+    border: none;
+    color: var(--color-txt-dark-primary);
+    font-size: 1.5rem;
+
+    &:hover {
+      color: var(--brand-primary);
+    }
+
+    @media (min-width: 800px) {
+      display: none;
+    }
+  }
+
+  .nav-items {
+    display: none;
+    line-height: 1.5rem;
+    font-family: var(--title-font-family);
+
+    @media (min-width: 800px) {
+      display: block;
+    }
+
+    .nav-items__item {
+      margin-top: var(--container-padding);
+
+      strong {
+        display: block;
+        color: var(--color-txt-dark-secondary);
+      }
+    }
+  }
+}
+
+body.nav-open {
+  .page-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .navigation__title {
+    display: none;
+  }
+
+  #nav-open {
+    display: none;
+  }
+
+  #nav-close {
+    display: block;
+    position: static;
+    text-align: right;
+    margin: var(--container-padding) auto;
+    width: 100%;
+  }
+
+  .nav-items {
+      display: block;
+  }
+}

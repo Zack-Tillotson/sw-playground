@@ -1,9 +1,18 @@
 :root {
   --white: #fff;
   --gray-light: #efefef;
-  --gray-dark: #595959;
-  --gray-darker: #333;
-  --black: #292929;
-  --brand-primary: #ff3b3f;
-  --brand-secondary: #caebf2;
+  --gray-dark: #9799a7;
+  --gray-darker: #666;
+  --black: #42444e;
+  --brand-primary: #2db34a;
+  --brand-primary-contrast: #ff7c30;
+  --brand-secondary: #0086cd;
+
+  --title-font-family: 'Montserrat', sans-serif;
+  --body-font-family: 'Open Sans', sans-serif;;
+
+  --container-padding: 2rem;
 }
+
+/* Can't use css vars in media queries (yet) */
+$breakpoint-small: 400px;

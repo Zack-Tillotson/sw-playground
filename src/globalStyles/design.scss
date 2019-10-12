@@ -1,0 +1,17 @@
+body {
+  background: var(--color-bg-light);
+  color: var(--color-txt-primary);
+  font-family: var(--body-font-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title-font-family);
+}
+
+h1 {
+  margin: var(--container-padding) 0;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
