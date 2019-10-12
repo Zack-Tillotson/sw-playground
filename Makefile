@@ -11,6 +11,6 @@ compile-static:
 	cp -r static/ public/
 
 compile-webpack:
-	npx webpack
+	npx webpack -p
 
 compile: clean compile-static compile-webpack
