@@ -5,7 +5,7 @@
   "main": "entry.js",
   "scripts": {
     "start": "make dev",
-    "compile": "make"
+    "release": "make release"
   },
   "author": "",
   "license": "ISC",

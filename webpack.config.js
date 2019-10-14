@@ -33,6 +33,21 @@ const templatePlugin = [
     chunks: ['networking'],
     filename: 'networking/index.html',
   }),
+  new HtmlWebpackPlugin({
+    ...basePluginConfig,
+    chunks: ['lifecycle'],
+    filename: 'sw-lifecycle/index.html',
+  }),
+  new HtmlWebpackPlugin({
+    ...basePluginConfig,
+    chunks: ['precaching'],
+    filename: 'precaching/index.html',
+  }),
+  new HtmlWebpackPlugin({
+    ...basePluginConfig,
+    chunks: ['pushNotifications'],
+    filename: 'push-notfications/index.html',
+  }),
 ];
 
 const inlinePlugin = new HtmlWebpackInlineSourcePlugin();
@@ -43,6 +58,9 @@ const config = {
   entry: {
     home: './src/homeEntry',
     networking: './src/networkingEntry',
+    lifecycle: './src/lifecycleEntry',
+    precaching: './src/precachingEntry',
+    pushNotifications: './src/pushNotificationEntry',
   },
   mode: isProdBuild ? 'production' : 'development',
   resolve: {

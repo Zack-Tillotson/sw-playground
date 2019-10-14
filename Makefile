@@ -14,3 +14,8 @@ compile-webpack:
 	npx webpack -p
 
 compile: clean compile-static compile-webpack
+
+deploy:
+	firebase deploy
+
+release: compile deploy
