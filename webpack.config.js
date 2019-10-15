@@ -25,28 +25,33 @@ const basePluginConfig = {
 const templatePlugin = [
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['home'],
+    chunks: ['aftStyles', 'home'],
     filename: 'index.html',
   }),
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['networking'],
+    chunks: ['aftStyles', 'introduction'],
+    filename: 'introduction/index.html',
+  }),
+  new HtmlWebpackPlugin({
+    ...basePluginConfig,
+    chunks: ['aftStyles', 'networking'],
     filename: 'networking/index.html',
   }),
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['lifecycle'],
+    chunks: ['aftStyles', 'lifecycle'],
     filename: 'sw-lifecycle/index.html',
   }),
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['precaching'],
+    chunks: ['aftStyles', 'precaching'],
     filename: 'precaching/index.html',
   }),
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['pushNotifications'],
-    filename: 'push-notfications/index.html',
+    chunks: ['aftStyles', 'pushNotifications'],
+    filename: 'push-notifications/index.html',
   }),
 ];
 
@@ -56,7 +61,9 @@ let cssLoader = isProdBuild ? MiniCssExtractPlugin.loader : 'style-loader';
 
 const config = {
   entry: {
+    aftStyles: './src/aftStylesEntry',
     home: './src/homeEntry',
+    introduction: './src/introductionEntry',
     networking: './src/networkingEntry',
     lifecycle: './src/lifecycleEntry',
     precaching: './src/precachingEntry',

@@ -3,13 +3,13 @@
 <head>
   <title>SW Playground</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="page-nav" id="page-nav">
     <a href="/" class="navigation__title">
       <span class="title--minor">Learn to Code</span>
-      <span class="title--major">SW Playground</span>
+      <span class="title--major">Service Workers</span>
     </a>
     <button id="nav-open" class="page-nav__toggle" aria-toggles="nav-items">
       ☰
@@ -18,20 +18,24 @@
       ×
     </button>
     <nav class="page-nav__nav-items nav-items" id="nav-items">
-      <a href="/networking/" class="nav-items__item">
+      <a href="/introduction/" class="nav-items__item">
         <strong>Lesson 1</strong>
+        Introduction
+      </a>
+      <a href="/networking/" class="nav-items__item">
+        <strong>Lesson 2</strong>
         Handling network requests
       </a>
-      <a href="/sw-lifecycle/" class="nav-items__item">
-        <strong>Lesson 2</strong>
+      <a class="nav-items__item nav-items__item--coming-soon">
+        <strong>Lesson 3</strong>
         Service Worker Lifecycle
       </a>
-      <a href="/precaching/" class="nav-items__item">
-        <strong>Lesson 3</strong>
+      <a class="nav-items__item nav-items__item--coming-soon">
+        <strong>Lesson 4</strong>
         Precaching application updates
       </a>
-      <a href="/push-notifications/" class="nav-items__item">
-        <strong>Lesson 4</strong>
+      <a class="nav-items__item nav-items__item--coming-soon">
+        <strong>Lesson 5</strong>
         Handling Push Notifications
       </a>
     </nav>
@@ -44,7 +48,7 @@
       });
     </script>
   </header>
-  <section id="app">
+  <section id="app" class="main-content">
     Page Content
   </section>
 </body>
