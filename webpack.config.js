@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebpackManifestPlugin = require('webpack-manifest-plugin');
 
 const isProdBuild = process.argv.indexOf('-p') !== -1;
 
@@ -28,34 +29,35 @@ const templatePlugin = [
     chunks: ['aftStyles', 'home'],
     filename: 'index.html',
   }),
-  new HtmlWebpackPlugin({
-    ...basePluginConfig,
-    chunks: ['aftStyles', 'introduction'],
-    filename: 'introduction/index.html',
-  }),
+  // new HtmlWebpackPlugin({
+  //   ...basePluginConfig,
+  //   chunks: ['aftStyles', 'introduction'],
+  //   filename: 'introduction/index.html',
+  // }),
   new HtmlWebpackPlugin({
     ...basePluginConfig,
     chunks: ['aftStyles', 'networking'],
     filename: 'networking/index.html',
   }),
-  new HtmlWebpackPlugin({
-    ...basePluginConfig,
-    chunks: ['aftStyles', 'lifecycle'],
-    filename: 'sw-lifecycle/index.html',
-  }),
-  new HtmlWebpackPlugin({
-    ...basePluginConfig,
-    chunks: ['aftStyles', 'precaching'],
-    filename: 'precaching/index.html',
-  }),
-  new HtmlWebpackPlugin({
-    ...basePluginConfig,
-    chunks: ['aftStyles', 'pushNotifications'],
-    filename: 'push-notifications/index.html',
-  }),
+  // new HtmlWebpackPlugin({
+  //   ...basePluginConfig,
+  //   chunks: ['aftStyles', 'lifecycle'],
+  //   filename: 'sw-lifecycle/index.html',
+  // }),
+  // new HtmlWebpackPlugin({
+  //   ...basePluginConfig,
+  //   chunks: ['aftStyles', 'precaching'],
+  //   filename: 'precaching/index.html',
+  // }),
+  // new HtmlWebpackPlugin({
+  //   ...basePluginConfig,
+  //   chunks: ['aftStyles', 'pushNotifications'],
+  //   filename: 'push-notifications/index.html',
+  // }),
 ];
 
 const inlinePlugin = new HtmlWebpackInlineSourcePlugin();
+const manifestPlugin = new WebpackManifestPlugin();
 
 let cssLoader = isProdBuild ? MiniCssExtractPlugin.loader : 'style-loader';
 
@@ -63,11 +65,11 @@ const config = {
   entry: {
     aftStyles: './src/aftStylesEntry',
     home: './src/homeEntry',
-    introduction: './src/introductionEntry',
+    // introduction: './src/introductionEntry',
     networking: './src/networkingEntry',
-    lifecycle: './src/lifecycleEntry',
-    precaching: './src/precachingEntry',
-    pushNotifications: './src/pushNotificationEntry',
+    // lifecycle: './src/lifecycleEntry',
+    // precaching: './src/precachingEntry',
+    // pushNotifications: './src/pushNotificationEntry',
   },
   mode: isProdBuild ? 'production' : 'development',
   resolve: {
@@ -107,6 +109,7 @@ const config = {
     envPlugin,
     ...templatePlugin,
     inlinePlugin,
+    manifestPlugin,
   ],
 };
 

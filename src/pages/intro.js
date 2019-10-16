@@ -4,18 +4,14 @@ import './pageStyles.scss';
 function Introduction() {
   return (
     <>
-      <img src="/images/triangles.svg" aria-role="presentation" className="full-height-2nd-column" />
+      <aside className="full-height-2nd-column">
+      </aside>
       <header>
         <h1>A Simple Introduction to Service Workers</h1>
       </header>
       <section className="page-subtitle">
         <h2>Web continues to muddle backend and front-end technology</h2>
-        <p>The SW Playground has one goal - to teach people how to use the most powerful new tool available in browsers today - Service Workers. Move past the misinformation and learn how and why this tool will change the way we make websites. This step by step guide covers a variety of use cases ranging from beginner to advanced, so jump in and have fun!</p>
-      </section>
-      <section className="page-section">
-        <a href="/networking/">
-          <h2>Handling network requests</h2>
-        </a>
+        <p>There is a lot of hype around Service Workers (SW) but there seems to be a lot of hype around every new web technology. What makes Service Workers good? In what situations would I use them? How do they work? Are there any drawbacks to using them? The SW Playground aims to answer all those questions in a simple, interactive, and fun guide.</p>
       </section>
     </>
   );

@@ -1,12 +1,14 @@
 .main-content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 0 var(--content-padding);
-  padding: 0 var(--container-padding);
+  grid-template-rows: min-content;
+  grid-gap: 0 var(--container-padding);
+  margin-left: var(--container-padding);
+  margin-right: var(--container-padding);
 
   @media (min-width: 800px) {
     grid-template-columns: 1fr 1fr;
-    padding-right: 0;
+    margin-right: 0;
   }
 }
 
@@ -26,7 +28,7 @@
     text-align: center;
     font-weight: normal;
     color: var(--color-txt-secondary);
-    margin: var(--container-padding);
+    margin-bottom: var(--container-padding);
   }
 }
 

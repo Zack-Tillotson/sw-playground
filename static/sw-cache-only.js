@@ -1,21 +1,20 @@
-const cacheVersion = 'cache-only';
+const swVersion= 'cache-only';
+const cacheVersion = 'kitten-cache';
 
 self.addEventListener('install', (event) => {
-  console.log(cacheVersion, 'install');
+  console.log(swVersion, 'install');
   event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener('activate', (event) => {
-  console.log(cacheVersion, 'activate');
+  console.log(swVersion, 'activate');
 });
 
 self.addEventListener('fetch', event => {
-  console.log(cacheVersion, 'fetch', event.request.url);
+  console.log(swVersion, 'fetch', event.request.url);
   event.respondWith(
     caches
       .open(cacheVersion)
       .then(cache => cache.match(event.request))
   );
 });
-
-setTimeout(() => console.log(self.clients), 3000)
