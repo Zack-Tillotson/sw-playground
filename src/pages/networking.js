@@ -15,7 +15,7 @@ function Networking() {
   useEffect(() => {
     refreshPics('/data/kittens.json', setPics);
   }, []);
-  const handleClick = () => refreshPics('/data/kittens2.json', setPics);
+  const handleClick = () => refreshPics('/data/kittens-v2.json', setPics);
 
   return (
     <>
