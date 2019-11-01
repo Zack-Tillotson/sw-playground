@@ -23,37 +23,22 @@ const basePluginConfig = {
   inlineSource: '.css$',
 };
 
+const pages = [
+  'lifecycle',
+  'networking',
+];
+
 const templatePlugin = [
   new HtmlWebpackPlugin({
     ...basePluginConfig,
     chunks: ['aftStyles', 'home'],
     filename: 'index.html',
   }),
-  // new HtmlWebpackPlugin({
-  //   ...basePluginConfig,
-  //   chunks: ['aftStyles', 'introduction'],
-  //   filename: 'introduction/index.html',
-  // }),
-  new HtmlWebpackPlugin({
+  ...pages.map(page => new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['aftStyles', 'networking'],
-    filename: 'networking/index.html',
-  }),
-  // new HtmlWebpackPlugin({
-  //   ...basePluginConfig,
-  //   chunks: ['aftStyles', 'lifecycle'],
-  //   filename: 'sw-lifecycle/index.html',
-  // }),
-  // new HtmlWebpackPlugin({
-  //   ...basePluginConfig,
-  //   chunks: ['aftStyles', 'precaching'],
-  //   filename: 'precaching/index.html',
-  // }),
-  // new HtmlWebpackPlugin({
-  //   ...basePluginConfig,
-  //   chunks: ['aftStyles', 'pushNotifications'],
-  //   filename: 'push-notifications/index.html',
-  // }),
+    chunks: ['aftStyles', page],
+    filename: `${page}/index.html`,
+  })),
 ];
 
 const inlinePlugin = new HtmlWebpackInlineSourcePlugin();
@@ -65,11 +50,7 @@ const config = {
   entry: {
     aftStyles: './src/aftStylesEntry',
     home: './src/homeEntry',
-    // introduction: './src/introductionEntry',
-    networking: './src/networkingEntry',
-    // lifecycle: './src/lifecycleEntry',
-    // precaching: './src/precachingEntry',
-    // pushNotifications: './src/pushNotificationEntry',
+    ...pages.reduce((soFar, page) => ({...soFar, [page]: `./src/${page}Entry`}), {}),
   },
   mode: isProdBuild ? 'production' : 'development',
   resolve: {

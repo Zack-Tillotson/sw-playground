@@ -17,6 +17,12 @@ h1 {
 h2 {
   font-size: 1.5rem;
   font-weight: bold;
+  margin: .5rem 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 a:link, a:visited {
@@ -28,6 +34,24 @@ a:hover {
   color: var(--brand-primary-offset);
 }
 
-header {
-  padding: var(--container-padding);
+a.cta {
+  display: inline-block;
+  margin: 1rem;
+  text-align: center;
+  border-radius: 3px;
+  border-bottom: solid 1px var(--color-txt-secondary);
+  color: var(--brand-secondary);
+
+  &--right {
+    float: right;
+  }
+}
+
+p {
+  margin-top: 1rem;
+  color: var(--color-txt-secondary);
+}
+
+strong {
+  color: var(--brand-secondary);
 }

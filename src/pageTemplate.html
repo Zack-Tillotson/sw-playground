@@ -8,8 +8,8 @@
 <body>
   <header class="page-nav" id="page-nav">
     <a href="/" class="navigation__title">
-      <span class="title--minor">Learn to Code</span>
-      <span class="title--major">Service Workers</span>
+      <span class="title--minor">Learn to code</span>
+      <span class="title--major">SW Playground</span>
     </a>
     <button id="nav-open" class="page-nav__toggle" aria-toggles="nav-items">
       ☰
@@ -18,9 +18,9 @@
       ×
     </button>
     <nav class="page-nav__nav-items nav-items" id="nav-items">
-      <a class="nav-items__item nav-items__item--coming-soon">
+      <a href="/lifecycle/" class="nav-items__item">
         <strong>Lesson 1</strong>
-        Introduction
+        Service Worker Lifecycle
       </a>
       <a href="/networking/" class="nav-items__item">
         <strong>Lesson 2</strong>
@@ -28,28 +28,26 @@
       </a>
       <a class="nav-items__item nav-items__item--coming-soon">
         <strong>Lesson 3</strong>
-        Service Worker Lifecycle
-      </a>
-      <a class="nav-items__item nav-items__item--coming-soon">
-        <strong>Lesson 4</strong>
         Precaching application updates
       </a>
       <a class="nav-items__item nav-items__item--coming-soon">
-        <strong>Lesson 5</strong>
-        Handling Push Notifications
+        <strong>Lesson 4</strong>
+        Push Notifications
       </a>
+      <p class="page-nav__about">I hope you like the information on this site. SW Playground is made by <a href="https://ZacheryTillotson.com">Zachery Tillotson</a>.</p>
     </nav>
-    <script>
-      document.getElementById('nav-open').addEventListener('click', () => {
-        document.body.classList.add('nav-open');
-      });
-      document.getElementById('nav-close').addEventListener('click', () => {
-        document.body.classList.remove('nav-open');
-      });
-    </script>
   </header>
   <section id="app" class="main-content">
     ...
   </section>
+  <script>
+    // Mobile navigation toggle
+    document.getElementById('nav-open').addEventListener('click', () => {
+      document.body.classList.add('nav-open');
+    });
+    document.getElementById('nav-close').addEventListener('click', () => {
+      document.body.classList.remove('nav-open');
+    });
+  </script>
 </body>
 </html>

@@ -20,6 +20,7 @@ body {
 .page-nav {
   grid-area: nav;
   position: relative;
+  padding: var(--container-padding);
 
   background: var(--color-bg-dark);
   color: var(--color-txt-dark-primary);
@@ -37,10 +38,11 @@ body {
 
     font-family: var(--title-font-family);
     font-size: 1.5rem;
-    text-align: center;
+    text-align: left;
 
     @media(min-width: 800px) {
       font-size: 2rem;
+      text-align: center;
     }
 
     .title--minor {
@@ -54,9 +56,15 @@ body {
     }
 
     .title--major {
+      font-size: 1.75rem;
       display: block;
       font-weight: bolder;
     }
+  }
+
+  .page-nav__about {
+    margin-top: 5rem;
+    color: var(--color-txt-dark-secondary);
   }
 
   #nav-close {
@@ -65,12 +73,13 @@ body {
 
   .page-nav__toggle {
     position: absolute;
-    left: var(--container-padding);
+    right: var(--container-padding);
     top: var(--container-padding);
     background: none;
     border: none;
     color: var(--color-txt-dark-primary);
     font-size: 1.5rem;
+    line-height: 1.75rem;
 
     &:hover {
       color: var(--brand-primary);
@@ -102,12 +111,15 @@ body {
 
     .nav-items__item--coming-soon {
       pointer-events: none;
+      position: relative;
 
       &:before {
         content: 'coming soon';
         color: var(--color-txt-dark-primary);
         background: var(--brand-secondary);
         display: inline-block;
+        position: absolute;
+        right: 0;
         padding: 0 3px;
         border-radius: 3px;
       }
@@ -136,7 +148,8 @@ body.nav-open {
     display: block;
     position: static;
     text-align: right;
-    margin: var(--container-padding) auto;
+    font-size: 3rem;
+    line-height: 1.75rem;
     width: 100%;
   }
 

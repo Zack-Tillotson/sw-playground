@@ -23,6 +23,20 @@
   }
 }
 
+.page-header {
+  margin-top: var(--container-padding);
+
+  &--lesson {
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      color: var(--color-txt-secondary);
+    }
+  }
+}
+
 .page-subtitle {
   h2 {
     text-align: center;
