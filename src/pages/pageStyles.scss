@@ -31,7 +31,7 @@
       text-align: left;
     }
 
-    p {
+    div {
       color: var(--color-txt-secondary);
     }
   }
@@ -47,5 +47,5 @@
 }
 
 .page-section {
-  margin-top: calc(var(--container-padding) * 2);
+  margin-top: var(--container-padding);
 }
