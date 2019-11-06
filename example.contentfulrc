@@ -1,0 +1,9 @@
+{
+  "space": "xxxxx",
+  "environments": {
+    "xxxxx": {
+      "cdnKey": "xxxxx",
+      "previewKey": "xxxxx"
+    }
+  }
+}

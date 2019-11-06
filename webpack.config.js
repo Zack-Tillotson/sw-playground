@@ -24,6 +24,7 @@ const basePluginConfig = {
 };
 
 const pages = [
+  'intro',
   'lifecycle',
   'networking',
 ];

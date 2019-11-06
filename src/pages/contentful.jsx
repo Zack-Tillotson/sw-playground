@@ -1,6 +1,8 @@
 import React from 'react';
 import './pageStyles.scss';
 
+
+
 function Home() {
   return (
     <>

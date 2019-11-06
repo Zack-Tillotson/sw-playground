@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       <header className="page-header page-header--lesson">
-        <div>Lesson 1</div>
+        <div>Lesson 2</div>
         <h1>Service Worker Lifecycle</h1>
       </header>
       <div />
