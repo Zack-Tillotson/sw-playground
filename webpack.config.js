@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,13 +7,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackManifestPlugin = require('webpack-manifest-plugin');
 
 const isProdBuild = process.argv.indexOf('-p') !== -1;
+const contentfulRc = fs.readFileSync('./.contentfulrc', 'UTF8');
 
 const envPlugin = new webpack.DefinePlugin({
   __DEBUG__: JSON.stringify(!isProdBuild),
   __RELEASE__: JSON.stringify(isProdBuild),
+  __CONTENTFUL__: contentfulRc,
   'process.env.NODE_ENV': isProdBuild ? '"production"' : '"development"'
 });
-
+console.log('__CONTENTFUL__', contentfulRc);
 const basePluginConfig = {
   template      : './src/pageTemplate.html',
   hash          : false,
@@ -23,19 +26,17 @@ const basePluginConfig = {
   inlineSource: '.css$',
 };
 
-const pages = [
-  'intro',
-  'lifecycle',
+const customPages = [
   'networking',
 ];
 
 const templatePlugin = [
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['aftStyles', 'home'],
+    chunks: ['aftStyles', 'contentful'],
     filename: 'index.html',
   }),
-  ...pages.map(page => new HtmlWebpackPlugin({
+  ...customPages.map(page => new HtmlWebpackPlugin({
     ...basePluginConfig,
     chunks: ['aftStyles', page],
     filename: `${page}/index.html`,
@@ -50,8 +51,8 @@ let cssLoader = isProdBuild ? MiniCssExtractPlugin.loader : 'style-loader';
 const config = {
   entry: {
     aftStyles: './src/aftStylesEntry',
-    home: './src/homeEntry',
-    ...pages.reduce((soFar, page) => ({...soFar, [page]: `./src/${page}Entry`}), {}),
+    contentful: './src/contentfulEntry',
+    ...customPages.reduce((soFar, page) => ({...soFar, [page]: `./src/${page}Entry`}), {}),
   },
   mode: isProdBuild ? 'production' : 'development',
   resolve: {
@@ -103,7 +104,7 @@ if(!isProdBuild) {
     proxy: {
       '**/': {
         target: 'http://localhost:8888',
-        pathRewrite: {'.*': 'pageTemplate.html'},
+        pathRewrite: {'.*': '/'},
       }
     },
   }
