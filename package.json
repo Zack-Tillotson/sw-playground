@@ -23,6 +23,7 @@
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-markdown": "^4.2.2",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "sass": "^1.23.0",

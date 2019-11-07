@@ -1,5 +1,7 @@
 import {createClient} from 'contentful';
 
+import dstructPage from './dstructPage';
+
 const {
   space,
   environments: {
@@ -38,17 +40,14 @@ function getPageContent() {
   const client = getSdkClient();
   const previewKey = new URLSearchParams(window.location.search).get('previewKey');
 
-  const routes = client.getEntries({
+  const page = client.getEntries({
       'content_type': 'assembly',
       'fields.key': previewKey,
+      include: 10,
     })
-    .then(resp => resp
-      .items[0]
-      .fields
-      .blocks
-      .map(block => block.fields));
+    .then(dstructPage);
 
-  return routes;
+  return page;
 
 }
 

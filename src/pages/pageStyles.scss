@@ -1,13 +1,12 @@
 .main-content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content;
   grid-gap: 0 var(--container-padding);
   margin-left: var(--container-padding);
   margin-right: var(--container-padding);
 
-  @media (min-width: 800px) {
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: 1024px) {
     margin-right: 0;
   }
 }
@@ -15,7 +14,7 @@
 .full-height-2nd-column {
   display: none;
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     display: block;
     width: 100%;
     grid-row: 1 / 9;

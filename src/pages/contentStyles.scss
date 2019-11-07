@@ -1,0 +1,75 @@
+
+.page-header--lesson, .page-content__header {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.page-introduction {
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  @media(min-width: 1024px) {
+    grid-column-end: 2;
+  }
+}
+
+.page-overview {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin: var(--container-padding) 0;
+
+  @media(min-width: 1024px) {
+    grid-row-start: auto;
+    grid-row-end: auto;
+    grid-column-start: 2;
+  }
+
+  position: relative;
+  display: inline-block;
+  width: calc(100% - var(--container-padding) - var(--container-padding));
+  width: fit-content;
+  padding: var(--container-padding);
+  border: solid 2px var(--color-bg-light-offset);
+  border-radius: 8px;
+
+  h4 {
+    color: var(--brand-primary);
+    font-weight: bold;
+    font-size: 1.15rem;
+    margin-bottom: var(--container-padding);
+  }
+
+  h6 {
+    color: var(--color-txt-secondary);
+    font-weight: bold;
+  }
+
+  li {
+    line-height: 2rem;
+    list-style: square;
+    margin-left: var(--container-padding);
+    color: var(--color-bg-light-offset);
+  }
+
+  a:link, a:visited {
+    color: var(--brand-secondary);
+    border-bottom: solid 1px var(--color-bg-light-offset);
+  }
+
+  .page-overview__lesson_num {
+    position: absolute;
+    right: -1rem;
+    top: .5rem;
+    background: var(--color-fg-secondary);
+    border-radius: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 2rem;
+    color: var(--color-bg-light);
+  }
+}
