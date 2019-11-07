@@ -36,20 +36,28 @@ function renderItem(item, index) {
     }
     case 'topicText': {
       return (
-        <div key={index}>
+        <div key={index} className="page-content__item">
           <Markdown source={item.content} />
         </div>
       );
     }
+    case 'topicImage': {
+      return (
+        <figure key={index} className="page-content__item page-content__image">
+          <img src={item.asset.fields.file.url} alt={item.alt} />
+          <figcaption><span className="caption-title">Fig:</span> {item.caption}</figcaption>
+        </figure>
+      );
+    }
     case 'empty': {
-      return <div key={index} />
+      return <div key={index} className="page-content__item" />
     }
     default:
       return <div key={index}>{item.type}</div>;
   }
 }
 
-function Contentful() {
+function Contentful({lessonNum}) {
   const {content, isLoading, isError} = useContentPage();
 
   if(isLoading) return 'loading ...';
@@ -61,8 +69,6 @@ function Contentful() {
     introduction,
     content: items,
   } = content;
-
-  const lessonNum = 1;
 
   return (
     <>

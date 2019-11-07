@@ -7,7 +7,7 @@ function useContentPage() {
   const [isErorr, updateIsError] = useState(false);
 
   useEffect(() => {
-    contentful.getPageContent()
+    contentful.getPageContent(window.location.pathname)
       .then(content => {
         contentLoaded(content);
       })

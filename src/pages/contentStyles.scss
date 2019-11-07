@@ -73,3 +73,24 @@
     color: var(--color-bg-light);
   }
 }
+
+.page-content__item {
+  grid-column-start: 1;
+  grid-column-end: -1;
+
+  @media(min-width: 1024px) {
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
+}
+
+.page-content__image {
+  .caption-title {
+    color: var(--color-txt-primary);
+  }
+
+  figcaption {
+    color: var(--color-txt-secondary);
+    font-style: italic;
+  }
+}

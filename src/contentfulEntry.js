@@ -15,9 +15,9 @@ const routes = contentful
     ReactDOM.render(
       <BrowserRouter>
         <Switch>
-          {routes.map(path =>
-            <Route key={path} path={'/' + path + '/'}>
-              <Page />
+          {routes.map(({fields: {slug}}, index) =>
+            <Route key={slug} path={'/' + slug + '/'}>
+              <Page lessonNum={index+1} />
             </Route>
           )}
         </Switch>
