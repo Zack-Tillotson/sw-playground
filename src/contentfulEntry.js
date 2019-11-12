@@ -4,7 +4,7 @@ import {
   BrowserRouter,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import Page from './pages/contentful';
 import contentful from './utils/contentful';

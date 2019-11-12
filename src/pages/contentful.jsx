@@ -5,6 +5,7 @@ import './pageStyles.scss';
 import './contentStyles.scss';
 
 import useContentPage from 'utils/useContentPage';
+import ContentfulImage from 'utils/ContentfulImage';
 
 function renderItems(items) {
   const itemsToRender = [];
@@ -43,10 +44,7 @@ function renderItem(item, index) {
     }
     case 'topicImage': {
       return (
-        <figure key={index} className="page-content__item page-content__image">
-          <img src={item.asset.fields.file.url} alt={item.alt} />
-          <figcaption><span className="caption-title">Fig:</span> {item.caption}</figcaption>
-        </figure>
+        <ContentfulImage key={index} className="page-content__item page-content__image" item={item} />
       );
     }
     case 'empty': {

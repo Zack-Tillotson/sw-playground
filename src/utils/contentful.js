@@ -47,13 +47,18 @@ function getPageContent(pagePath) {
       const assembly = client.getEntries({
           'links_to_entry': routeMeta.sys.id,
           'include': 10,
-        })
+        });
       return assembly.then(dstructPage);
   });
 
 }
 
+function getAsset(id) {
+  return client.getAsset(id)
+}
+
 export default {
   getRoutes,
   getPageContent,
+  getAsset,
 }

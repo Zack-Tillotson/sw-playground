@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import contentful from './contentful';
 
-function useContentPage() {
+function useContentPage(prop) {
   const [content, contentLoaded] = useState(null);
   const [isLoading, updateIsLoading] = useState(true);
   const [isErorr, updateIsError] = useState(false);

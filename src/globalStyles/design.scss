@@ -48,10 +48,16 @@ a.cta {
 }
 
 p {
-  margin-top: 1rem;
+  margin: .5rem 0;
   color: var(--color-txt-secondary);
 }
 
 strong {
   color: var(--brand-secondary);
+}
+
+figcaption {
+  color: var(--color-txt-secondary);
+  font-style: italic;
+  text-align: center;
 }
