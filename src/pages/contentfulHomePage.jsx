@@ -29,7 +29,7 @@ function Contentful({lessonNum}) {
         <h2>{description}</h2>
         <Markdown source={introduction} className="page-introduction" />
       </section>
-      <img src="/images/triangles.svg" aria-role="image" className="full-height-2nd-column" />
+      <img src="/images/triangles.svg" role="presentation" className="full-height-2nd-column" />
     </>
   );
 }

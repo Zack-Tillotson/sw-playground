@@ -1,12 +1,5 @@
 // Takes a Contentful Page data object & converts to a more easily usable form
-function convert(data) {
-
-  let assembly;
-  try {
-    assembly = data.items[0];
-  } catch(e) {
-    return null;
-  }
+function convert(assembly) {
 
   const {blocks, key} = assembly.fields;
 

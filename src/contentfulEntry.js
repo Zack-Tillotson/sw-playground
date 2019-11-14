@@ -23,14 +23,14 @@ const routes = contentful
             switch(path) {
               case '/': {
                 return (
-                  <Route key={slug} path={path}>
+                  <Route key={slug} exact path={path}>
                     <HomePage lessonNum={index} />
                   </Route>
                 );
               }
               default: {
                 return (
-                  <Route key={slug} path={path}>
+                  <Route key={slug} exact path={path}>
                     <Page lessonNum={index} />
                   </Route>
                 );

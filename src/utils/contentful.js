@@ -44,11 +44,14 @@ function getPageContent(pagePath) {
     .then(routes => {
       const routeMeta = routes.find(item => (item.fields.slug || '') === slug);
 
-      const assembly = client.getEntries({
+      return client.getEntries({
           'links_to_entry': routeMeta.sys.id,
           'include': 10,
-        });
-      return assembly.then(dstructPage);
+        })
+        .then(resp => resp.items)
+        .then(items => items.filter(item => item.fields.key.startsWith('sw-playground.page')))
+        .then(items => items[0])
+        .then(dstructPage);
   });
 
 }
