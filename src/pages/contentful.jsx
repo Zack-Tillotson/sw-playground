@@ -7,7 +7,7 @@ import './contentStyles.scss';
 import useContentPage from 'utils/useContentPage';
 import ContentfulImage from 'utils/ContentfulImage';
 
-function renderItems(items) {
+function renderItems(items = []) {
   const itemsToRender = [];
 
   for(let index = 0 ; index < items.length ; index++) {
@@ -71,17 +71,18 @@ function Contentful({lessonNum}) {
   return (
     <>
       <header className="page-header page-header--lesson">
-        <div>Lesson {lessonNum}</div>
+        {lessonNum > 0 && (<div>Lesson {lessonNum}</div>)}
         <h1>{title}</h1>
       </header>
-      <section className="page-introduction">
-        {introduction}
-      </section>
+      <Markdown
+        source={introduction}
+        className="page-introduction"
+        renderers={{root: props => <section {...props} />}} />
       <nav className="page-overview">
         <h4>In This Lesson</h4>
         <h6>Service Workers</h6>
         <ul>
-          {items.filter(item => item.type === 'topicTextBlock').map(item => (
+          {(items || []).filter(item => item.type === 'topicTextBlock').map(item => (
             <li key={item.slug}>
               <a href={`#${item.slug}`}>{item.title}</a>
             </li>

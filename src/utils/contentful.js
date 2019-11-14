@@ -42,7 +42,7 @@ function getPageContent(pagePath) {
   const slug = pagePath.split('/').filter(piece => piece).join('/');
   return getRoutes()
     .then(routes => {
-      const routeMeta = routes.find(item => item.fields.slug === slug);
+      const routeMeta = routes.find(item => (item.fields.slug || '') === slug);
 
       const assembly = client.getEntries({
           'links_to_entry': routeMeta.sys.id,

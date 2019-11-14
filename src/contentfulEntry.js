@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Page from './pages/contentful';
+import HomePage from './pages/contentfulHomePage'
 import contentful from './utils/contentful';
 
 const routes = contentful
@@ -15,11 +16,27 @@ const routes = contentful
     ReactDOM.render(
       <BrowserRouter>
         <Switch>
-          {routes.map(({fields: {slug}}, index) =>
-            <Route key={slug} path={'/' + slug + '/'}>
-              <Page lessonNum={index+1} />
-            </Route>
-          )}
+          {routes.map(({fields: {slug}}, index) => {
+            let path = '/';
+            if(slug) path += `${slug}/`;
+
+            switch(path) {
+              case '/': {
+                return (
+                  <Route key={slug} path={path}>
+                    <HomePage lessonNum={index} />
+                  </Route>
+                );
+              }
+              default: {
+                return (
+                  <Route key={slug} path={path}>
+                    <Page lessonNum={index} />
+                  </Route>
+                );
+              }
+            }
+          })}
         </Switch>
       </BrowserRouter>
     , document.getElementById('app'));

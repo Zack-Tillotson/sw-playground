@@ -53,11 +53,21 @@ p {
 }
 
 strong {
-  color: var(--brand-secondary);
+  font-weight: bold;
+}
+
+figure {
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  height: fit-content;
+  margin: var(--container-padding) auto;
+  padding: var(--container-padding);
+  border: solid 2px var(--color-bg-light-offset);
+  border-radius: 8px;
 }
 
 figcaption {
   color: var(--color-txt-secondary);
   font-style: italic;
-  text-align: center;
 }
