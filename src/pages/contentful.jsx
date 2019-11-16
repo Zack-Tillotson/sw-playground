@@ -33,7 +33,12 @@ function renderItems(items = []) {
 function renderItem(item, index) {
   switch(item.type) {
     case 'topicTextBlock': {
-      return <h2 key={index} id={item.slug} className="page-content__header">{item.title}</h2>
+      return <Markdown
+        key={index}
+        id={item.slug}
+        className="page-content__header"
+        source={item.title}
+        renderers={{root: props => <h2 {...props} />}} />
     }
     case 'topicText': {
       return (

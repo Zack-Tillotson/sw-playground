@@ -10,7 +10,6 @@
 
   @media(min-width: 1024px) {
     grid-column-end: 2;
-    margin: var(--container-padding) 0;
   }
 }
 
@@ -29,7 +28,6 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: var(--container-padding) 0;
   padding: var(--container-padding);
   border: solid 2px var(--color-bg-light-offset);
   border-radius: 8px;
