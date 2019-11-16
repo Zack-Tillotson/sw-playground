@@ -28,6 +28,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  min-width: 300px;
   padding: var(--container-padding);
   border: solid 2px var(--color-bg-light-offset);
   border-radius: 8px;
