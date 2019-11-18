@@ -6,6 +6,7 @@ import './contentStyles.scss';
 
 import useContentPage from 'utils/useContentPage';
 import ContentfulImage from 'utils/ContentfulImage';
+import Skeleton from 'components/Skeleton';
 
 function renderItems(items = []) {
   const itemsToRender = [];
@@ -63,7 +64,7 @@ function renderItem(item, index) {
 function Contentful({lessonNum}) {
   const {content, isLoading, isError} = useContentPage();
 
-  if(isLoading) return 'loading ...';
+  if(isLoading) return <Skeleton />;
   if(isError) return 'Error';
 
   const {
@@ -76,7 +77,6 @@ function Contentful({lessonNum}) {
   return (
     <>
       <header className="page-header page-header--lesson">
-        {lessonNum > 0 && (<div>Lesson {lessonNum}</div>)}
         <h1>{title}</h1>
       </header>
       <Markdown

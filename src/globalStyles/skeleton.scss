@@ -1,0 +1,26 @@
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -25rem 0
+  }
+  100% {
+    background-position: 25rem 0
+  }
+}
+
+.skeleton__container {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.skeleton {
+  height: 5rem;
+  margin: var(--container-padding);
+  border-radius: 8px;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: skeleton-shimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, #cacbcc 5%, #e4e5e5 55%, #cacbcc 70%);
+  background-size: 50rem var(--spacing-unit-x9);
+}

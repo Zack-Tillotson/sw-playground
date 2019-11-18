@@ -22,9 +22,11 @@ function ContentfulImage(props) {
   return (
     <figure className={props.className} ref={containerRef}>
       <picture>
-        <source type="image/webp" src={`${url}?fm=webp${widthParam}`} />
-        <source src={`${url}?fm=jpg&fl=progressive${widthParam}`} type="image/jpeg" />
-        <img src={`${url}?${widthParam}`} alt={item.alt} />
+        <source
+          type="image/webp"
+          srcSet={`${url}?fm=webp&w=700 700w`}
+           />
+        <img src={url} alt={item.alt} />
       </picture>
       <figcaption><span className="caption-title">Fig:</span> {item.caption}</figcaption>
     </figure>

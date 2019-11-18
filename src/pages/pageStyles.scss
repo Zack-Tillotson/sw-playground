@@ -5,10 +5,6 @@
   grid-gap: 0 var(--container-padding);
   margin-left: var(--container-padding);
   margin-right: var(--container-padding);
-
-  @media (min-width: 1024px) {
-    margin-right: 0;
-  }
 }
 
 .full-height-2nd-column {

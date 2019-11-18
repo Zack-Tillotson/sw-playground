@@ -27,10 +27,11 @@ const client = getSdkClient();
 
 function getRoutes() {
   const routes = client.getEntries({
-    'content_type': 'topicPage',
+    'content_type': 'assembly',
+    'fields.key': 'sw-playground.navigation',
   }).then(results => {
     if(results && results.items && results.items.length) {
-      return results.items;
+      return results.items[0].fields.blocks;
     }
     else return [];
   });
