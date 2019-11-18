@@ -108,6 +108,8 @@
 .page-content__footer {
   margin-top: var(--container-padding);
   margin-bottom: var(--container-padding);
+  grid-column-start: 1;
+  grid-column-end: -1;
 
   a:link, a:visited {
     border-bottom: solid 1px var(--color-bg-light-offset);
