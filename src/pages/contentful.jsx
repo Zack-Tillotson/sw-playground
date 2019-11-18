@@ -36,10 +36,9 @@ function renderItem(item, index) {
     case 'topicTextBlock': {
       return <Markdown
         key={index}
-        id={item.slug}
         className="page-content__header"
         source={item.title}
-        renderers={{root: props => <h2 {...props} />}} />
+        renderers={{root: props => <h2 {...props} id={item.slug} />}} />
     }
     case 'topicText': {
       return (
@@ -59,6 +58,31 @@ function renderItem(item, index) {
     default:
       return <div key={index}>{item.type}</div>;
   }
+}
+
+function renderLessonNav(lessonNum, content) {
+  const {routes} = content;
+
+  return (
+    <>
+      <div className="page-content__footer page-content__footer--left">
+        {lessonNum > 1 && (
+          <>
+            <h4>Lesson {lessonNum - 1}</h4>
+            <a href={`/${routes[lessonNum - 1].fields.slug}/`}>{routes[lessonNum - 1].fields.title}</a>
+          </>
+        )}
+      </div>
+      <div className="page-content__footer page-content__footer--right">
+        {lessonNum + 1 < content.routes.length && (
+          <>
+            <h4>Lesson {lessonNum + 1}</h4>
+            <a href={`/${routes[lessonNum + 1].fields.slug}/`}>{routes[lessonNum + 1].fields.title}</a>
+          </>
+        )}
+      </div>
+    </>
+  );
 }
 
 function Contentful({lessonNum}) {
@@ -96,6 +120,7 @@ function Contentful({lessonNum}) {
         <span className="page-overview__lesson_num">{lessonNum}</span>
       </nav>
       {renderItems(items)}
+      {renderLessonNav(lessonNum, content)}
     </>
   );
 }

@@ -52,7 +52,8 @@ function getPageContent(pagePath) {
         .then(resp => resp.items)
         .then(items => items.filter(item => item.fields.key.startsWith('sw-playground.page')))
         .then(items => items[0])
-        .then(dstructPage);
+        .then(dstructPage)
+        .then(page => ({...page, routes}));
   });
 
 }

@@ -85,10 +85,35 @@
     grid-column-start: auto;
     grid-column-end: auto;
   }
+
+  ul {
+    list-style: circle;
+
+    li {
+      margin-left: var(--container-padding);
+    }
+  }
+
+  a:link, a:visited {
+    border-bottom: solid 1px var(--color-bg-light-offset);
+  }
 }
 
 .page-content__image {
   .caption-title {
     color: var(--color-txt-primary);
   }
+}
+
+.page-content__footer {
+  margin-top: var(--container-padding);
+  margin-bottom: var(--container-padding);
+
+  a:link, a:visited {
+    border-bottom: solid 1px var(--color-bg-light-offset);
+  }
+}
+
+.page-content__footer--right {
+  text-align: right;
 }
