@@ -106,16 +106,28 @@
 }
 
 .page-content__footer {
-  margin-top: var(--container-padding);
-  margin-bottom: var(--container-padding);
   grid-column-start: 1;
   grid-column-end: -1;
+
+  display: flex;
+  flex-flow: row no-wrap;
+
+  margin-top: var(--container-padding);
+  margin-bottom: var(--container-padding);
+
+  @media(min-width: 1024px) {
+    grid-column-end: auto;
+  }
 
   a:link, a:visited {
     border-bottom: solid 1px var(--color-bg-light-offset);
   }
-}
 
-.page-content__footer--right {
-  text-align: right;
+  .page-footer {
+    flex: 1;
+  }
+
+  .page-footer--right {
+    text-align: right;
+  }
 }

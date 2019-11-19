@@ -64,24 +64,20 @@ function renderLessonNav(lessonNum, content) {
   const {routes} = content;
 
   return (
-    <>
-      <div className="page-content__footer page-content__footer--left">
-        {lessonNum > 1 && (
-          <>
-            <h4>Lesson {lessonNum - 1}</h4>
-            <a href={`/${routes[lessonNum - 1].fields.slug}/`}>{routes[lessonNum - 1].fields.title}</a>
-          </>
-        )}
-      </div>
-      <div className="page-content__footer page-content__footer--right">
-        {lessonNum + 1 < content.routes.length && (
-          <>
-            <h4>Lesson {lessonNum + 1}</h4>
-            <a href={`/${routes[lessonNum + 1].fields.slug}/`}>{routes[lessonNum + 1].fields.title}</a>
-          </>
-        )}
-      </div>
-    </>
+    <section className="page-content__footer">
+      {lessonNum > 1 && (
+        <div className="page-footer page-footer--left">
+          <h4>Lesson {lessonNum - 1}</h4>
+          <a href={`/${routes[lessonNum - 1].fields.slug}/`}>{routes[lessonNum - 1].fields.title}</a>
+        </div>
+      )}
+      {lessonNum + 1 < content.routes.length && (
+        <div className="page-footer page-footer--right">
+          <h4>Lesson {lessonNum + 1}</h4>
+          <a href={`/${routes[lessonNum + 1].fields.slug}/`}>{routes[lessonNum + 1].fields.title}</a>
+        </div>
+      )}
+    </section>
   );
 }
 
