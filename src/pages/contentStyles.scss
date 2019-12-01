@@ -56,11 +56,6 @@
     color: var(--color-bg-light-offset);
   }
 
-  a:link, a:visited {
-    color: var(--brand-secondary);
-    border-bottom: solid 1px var(--color-bg-light-offset);
-  }
-
   .page-overview__lesson_num {
     position: absolute;
     right: -.7rem;

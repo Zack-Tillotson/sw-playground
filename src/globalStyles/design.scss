@@ -33,7 +33,7 @@ h4 {
 
 a:link, a:visited {
   text-decoration: none;
-  color: var(--brand-primary);
+  color: var(--brand-secondary);
 }
 
 a:hover {
@@ -60,6 +60,7 @@ p {
 
 strong {
   font-weight: bold;
+  color: var(--brand-primary);
 }
 
 figure {
