@@ -6,6 +6,7 @@ import './contentStyles.scss';
 
 import useContentPage from 'utils/useContentPage';
 import ContentfulImage from 'utils/ContentfulImage';
+import ContentfulVideo from 'utils/ContentfulVideo';
 import Skeleton from 'components/Skeleton';
 
 function renderItems(items = []) {
@@ -50,6 +51,11 @@ function renderItem(item, index) {
     case 'topicImage': {
       return (
         <ContentfulImage key={index} className="page-content__item page-content__image" item={item} />
+      );
+    }
+    case 'blockVideo': {
+      return (
+        <ContentfulVideo key={index} className="page-content__item page-content__video" item={item} />
       );
     }
     case 'empty': {
