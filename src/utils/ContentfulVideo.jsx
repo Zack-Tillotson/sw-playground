@@ -1,14 +1,11 @@
 import React, {useRef} from 'react';
 
-import useContentAssets from './useContentAssets';
+import useContentVideo from './useContentVideo';
 
 function ContentfulVideo(props) {
-  const items = useContentAssets(props.item);
+  const {video, poster, isLoading} = useContentVideo(props.item);
 
-  const webp = items.find(obj => obj.item && obj.item.asset.fields.file.contentType === 'image/webp');
-  const gif = items.find(obj => obj.item && obj.item.asset.fields.file.contentType === 'image/gif');
-
-  if(!webp && !gif) return (
+  if(!poster || !video) return (
     <figure className={props.className}>
       ...
     </figure>
@@ -16,19 +13,13 @@ function ContentfulVideo(props) {
 
   return (
     <figure className={props.className}>
-      <picture>
-        {!!webp && (
-          <source
-            type="image/webp"
-            srcSet={`${webp.item.asset.fields.file.url} 700w`}
-             />
-        )}
-        {!!gif && (
-          <img src={gif.item.asset.fields.file.url} alt={gif.item.asset.fields.description} />
-        )}
-      </picture>
-      {!!gif && (
-        <figcaption><span className="caption-title">Fig:</span> {gif.item.asset.fields.description}</figcaption>
+      <video autoplay controls loop muted playsinline poster={poster.poster.fields.file.url}>
+        <source
+          type="video/mp4"
+          src={poster.video.fields.file.url} />
+      </video>
+      {!!video && (
+        <figcaption><span className="caption-title">Fig:</span> {video.video.fields.description}</figcaption>
       )}
     </figure>
   );
