@@ -19,7 +19,7 @@ function ContentfulVideo(props) {
           src={poster.video.fields.file.url} />
       </video>
       {!!video && (
-        <figcaption><span className="caption-title">Fig:</span> {video.video.fields.description}</figcaption>
+        <figcaption><span className="caption-title">Video:</span> {video.video.fields.description}</figcaption>
       )}
     </figure>
   );

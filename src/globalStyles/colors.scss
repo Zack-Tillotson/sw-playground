@@ -18,7 +18,7 @@
   --color-d-bg-dark: var(--white);
   --color-d-bg-dark-offset: var(--gray-light);
   --color-d-fg-primary: var(--brand-primary);
-  --color-d-fg-secondary: var(--brand-secondary);
+  --color-d-fg-secondary: var(--brand-secondary-contrast);
   --color-d-txt-primary: var(--white);
   --color-d-txt-secondary: var(--gray-light);
   --color-d-txt-dark-primary: var(--black);
@@ -51,6 +51,7 @@
 
   /* Dark mode preference */
   @media (prefers-color-scheme: dark) {
+    --brand-secondary: var(--brand-secondary-contrast);
     --color-bg-light: var(--color-d-bg-light);
     --color-bg-light-offset: var(--color-d-bg-light-offset);
     --color-bg-dark: var(--color-d-bg-dark);
@@ -80,6 +81,7 @@
 
 /* Dark mode preference */
 .prefers-color-scheme-dark {
+  --brand-secondary: var(--brand-secondary-constrast);
   --color-bg-light: var(--color-d-bg-light);
   --color-bg-light-offset: var(--color-d-bg-light-offset);
   --color-bg-dark: var(--color-d-bg-dark);
