@@ -89,6 +89,12 @@
     }
   }
 
+  ol {
+    li {
+      margin-left: var(--container-padding);
+    }
+  }
+
   a:link, a:visited {
     border-bottom: solid 1px var(--color-bg-light-offset);
   }
