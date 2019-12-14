@@ -1,11 +1,15 @@
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: min-content;
   grid-gap: 0 var(--container-padding);
   margin-left: var(--container-padding);
   margin-right: var(--container-padding);
   padding-bottom: var(--container-padding);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .full-height-2nd-column {
