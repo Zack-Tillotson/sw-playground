@@ -105,10 +105,6 @@ function Contentful({lessonNum}) {
       <header className="page-header page-header--lesson">
         <h1>{title}</h1>
       </header>
-      <Markdown
-        source={introduction}
-        className="page-introduction"
-        renderers={{root: props => <section {...props} />}} />
       <nav className="page-overview">
         <h4>In This Lesson</h4>
         <h6>Service Workers</h6>
@@ -121,8 +117,13 @@ function Contentful({lessonNum}) {
         </ul>
         <span className="page-overview__lesson_num">{lessonNum}</span>
       </nav>
+      <Markdown
+        source={introduction}
+        className="page-introduction"
+        renderers={{root: props => <section {...props} />}} />
       {renderItems(items)}
       {renderLessonNav(lessonNum, content)}
+      <img src="/images/triangles.svg" role="presentation" className="full-height-2nd-column" />
     </>
   );
 }

@@ -1,30 +1,4 @@
-
-.page-header--lesson, .page-content__header {
-  grid-column-start: 1;
-  grid-column-end: -1;
-}
-
-.page-introduction {
-  grid-column-start: 1;
-  grid-column-end: -1;
-
-  @media(min-width: 1024px) {
-    grid-column-end: 2;
-  }
-}
-
 .page-overview {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 1;
-  grid-column-end: -1;
-
-  @media(min-width: 1024px) {
-    grid-row-start: auto;
-    grid-row-end: auto;
-    grid-column-start: 2;
-  }
-
   position: relative;
   display: inline-block;
   width: 100%;
@@ -32,11 +6,6 @@
   padding: var(--container-padding);
   border: solid 2px var(--color-bg-light-offset);
   border-radius: 8px;
-
-  @media(min-width: 1024px) {
-    max-width: calc(100% - var(--container-padding) - var(--container-padding));
-    width: fit-content;
-  }
 
   h4 {
     color: var(--brand-primary);
@@ -73,12 +42,10 @@
 }
 
 .page-content__item {
-  grid-column-start: 1;
-  grid-column-end: -1;
+
 
   @media(min-width: 1024px) {
-    grid-column-start: auto;
-    grid-column-end: auto;
+
   }
 
   ul {
@@ -107,18 +74,13 @@
 }
 
 .page-content__footer {
-  grid-column-start: 1;
-  grid-column-end: -1;
+
 
   display: flex;
   flex-flow: row no-wrap;
 
   margin-top: var(--container-padding);
   margin-bottom: var(--container-padding);
-
-  @media(min-width: 1024px) {
-    grid-column-end: auto;
-  }
 
   a:link, a:visited {
     border-bottom: solid 1px var(--color-bg-light-offset);
