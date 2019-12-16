@@ -51,6 +51,7 @@
 
   /* Dark mode preference */
   @media (prefers-color-scheme: dark) {
+    --brand-primary: var(--brand-primary-contrast);
     --brand-secondary: var(--brand-secondary-contrast);
     --color-bg-light: var(--color-d-bg-light);
     --color-bg-light-offset: var(--color-d-bg-light-offset);
@@ -81,6 +82,8 @@
 
 /* Dark mode preference */
 .prefers-color-scheme-dark {
+  --brand-primary: var(--brand-primary-contrast);
+  --brand-secondary: var(--brand-secondary-contrast);
   --color-bg-light: var(--color-d-bg-light);
   --color-bg-light-offset: var(--color-d-bg-light-offset);
   --color-bg-dark: var(--color-d-bg-dark);
