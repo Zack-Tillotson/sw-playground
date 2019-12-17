@@ -13,7 +13,7 @@ function ContentfulVideo(props) {
 
   return (
     <figure className={props.className}>
-      <video autoplay controls loop muted playsinline poster={poster.poster.fields.file.url}>
+      <video controls loop muted playsInline poster={poster.poster.fields.file.url}>
         <source
           type="video/mp4"
           src={poster.video.fields.file.url} />

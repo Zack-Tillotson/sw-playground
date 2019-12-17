@@ -80,6 +80,13 @@ const config = {
         ],
       },
       {
+        test: /\.css$/,
+        use: [
+          { loader: cssLoader },
+          { loader: 'css-loader' },
+        ],
+      },
+      {
         test: /\.svg$/,
         loader: 'svg-inline-loader',
       },

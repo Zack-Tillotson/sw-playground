@@ -6,6 +6,7 @@
   padding: var(--container-padding);
   border: solid 2px var(--color-bg-light-offset);
   border-radius: 8px;
+  margin-bottom: var(--container-padding);
 
   h4 {
     color: var(--brand-primary);
@@ -64,6 +65,17 @@
 
   a:link, a:visited {
     border-bottom: solid 1px var(--color-bg-light-offset);
+  }
+
+  pre {
+    max-width: calc(100vw - var(--container-padding) - var(--container-padding));
+    overflow-x: scroll;
+    font-size: .75rem;
+  }
+
+  code {
+    display: inline-block;
+    width: 500px;
   }
 }
 

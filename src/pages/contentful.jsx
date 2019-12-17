@@ -7,6 +7,7 @@ import './contentStyles.scss';
 import useContentPage from 'utils/useContentPage';
 import ContentfulImage from 'utils/ContentfulImage';
 import ContentfulVideo from 'utils/ContentfulVideo';
+import ContentfulCode from 'utils/ContentfulCode';
 import Skeleton from 'components/Skeleton';
 
 function renderItems(items = []) {
@@ -44,7 +45,7 @@ function renderItem(item, index) {
     case 'topicText': {
       return (
         <div key={index} className="page-content__item">
-          <Markdown source={item.content} />
+          <Markdown source={item.content} renderers={{code: item => <ContentfulCode {...item} /> }} />
         </div>
       );
     }

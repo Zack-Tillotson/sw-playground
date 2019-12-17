@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 
 import useContentAsset from './useContentAsset';
 
@@ -6,9 +6,12 @@ function getImageWidth(width) {
   return parseInt((width + 100) / 100) * 100;
 }
 
+let globalImgCount = 1;
+
 function ContentfulImage(props) {
   const {item} = useContentAsset(props.item);
   const containerRef = useRef();
+  const [imageCount] = useState(globalImgCount++);
 
   if(!item) return (
     <figure className={props.className} ref={containerRef}>
@@ -28,7 +31,7 @@ function ContentfulImage(props) {
            />
         <img src={url} alt={item.alt} />
       </picture>
-      <figcaption><span className="caption-title">Fig:</span> {item.caption}</figcaption>
+      <figcaption><span className="caption-title">Fig {imageCount}:</span> {item.caption}</figcaption>
     </figure>
   );
 }
