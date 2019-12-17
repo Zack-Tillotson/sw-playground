@@ -72,11 +72,6 @@ figure {
   padding: var(--container-padding);
   border: solid 2px var(--color-bg-light-offset);
   border-radius: 8px;
-
-  @media(min-width: 1024px) {
-    margin-left: 0;
-    margin-right: 0;
-  }
 }
 
 figcaption {
