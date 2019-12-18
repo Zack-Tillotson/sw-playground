@@ -9,6 +9,7 @@ import ContentfulImage from 'utils/ContentfulImage';
 import ContentfulVideo from 'utils/ContentfulVideo';
 import ContentfulCode from 'utils/ContentfulCode';
 import Skeleton from 'components/Skeleton';
+import PrettyTriangles from 'components/PrettyTriangles';
 
 function renderItems(items = []) {
   const itemsToRender = [];
@@ -124,7 +125,7 @@ function Contentful({lessonNum}) {
         renderers={{root: props => <section {...props} />}} />
       {renderItems(items)}
       {renderLessonNav(lessonNum, content)}
-      <img src="/images/triangles.svg" role="presentation" className="full-height-2nd-column" />
+      <PrettyTriangles className="full-height-2nd-column" />
     </>
   );
 }

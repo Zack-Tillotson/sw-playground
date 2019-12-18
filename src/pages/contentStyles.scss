@@ -106,3 +106,13 @@
     text-align: right;
   }
 }
+
+.pretty-triangles {
+  polygon {
+    transition: fill 3s;
+  }
+
+  .pretty-triangles--hidden {
+    fill: rgba(0,0,0,0);
+  }
+}
