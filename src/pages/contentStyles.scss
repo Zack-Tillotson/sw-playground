@@ -3,7 +3,7 @@
   display: inline-block;
   width: 100%;
   min-width: 300px;
-  padding: var(--container-padding);
+  padding: var(--container-padding) calc(2 * var(--container-padding)) var(--container-padding) var(--container-padding);
   border: solid 2px var(--color-bg-light-offset);
   border-radius: 8px;
   margin-bottom: var(--container-padding);
@@ -114,5 +114,13 @@
 
   .pretty-triangles--hidden {
     fill: rgba(0,0,0,0);
+  }
+}
+
+ol.lessons {
+  list-style: none;
+
+  li {
+    margin: 0;
   }
 }

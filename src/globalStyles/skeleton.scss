@@ -1,4 +1,4 @@
-@keyframes skeleton-shimmer {
+  @keyframes skeleton-shimmer {
   0% {
     background-position: -25rem 0
   }
@@ -9,13 +9,13 @@
 
 .skeleton__container {
   grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-end: 2;
 }
 
 .skeleton {
   height: 5rem;
-  margin: var(--container-padding);
-  border-radius: 8px;
+  margin: var(--container-padding) 0;
+  /*border-radius: 8px;*/
   animation-duration: 10s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;

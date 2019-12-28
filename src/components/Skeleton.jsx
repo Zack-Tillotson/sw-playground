@@ -1,13 +1,18 @@
 import React from 'react';
 
 function Skeleton() {
-  return [
-    <section key="1" className="skeleton__container">
-      {new Array(5).fill().map((_, index) => (
-        <div key={index} className="skeleton" />
-      ))}
+  return (
+    <section className="skeleton__container">
+      <div className="skeleton" />
+      <div className="page-overview">
+        <div className="skeleton" />
+        <div className="skeleton" />
+      </div>
+      <div className="skeleton" />
+      <div className="skeleton" />
+      <div className="skeleton" />
     </section>
-  ]
+  );
 }
 
 export default Skeleton;

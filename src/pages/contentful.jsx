@@ -9,7 +9,7 @@ import ContentfulImage from 'utils/ContentfulImage';
 import ContentfulVideo from 'utils/ContentfulVideo';
 import ContentfulCode from 'utils/ContentfulCode';
 import Skeleton from 'components/Skeleton';
-import PrettyTriangles from 'components/PrettyTriangles';
+// import PrettyTriangles from 'components/PrettyTriangles';
 
 function renderItems(items = []) {
   const itemsToRender = [];
@@ -99,8 +99,11 @@ function Contentful({lessonNum}) {
     title,
     description,
     introduction,
+    slug,
     content: items,
   } = content;
+
+  const trianglePath = `/images/triangle-field-${slug}.svg`;
 
   return (
     <>
@@ -125,7 +128,8 @@ function Contentful({lessonNum}) {
         renderers={{root: props => <section {...props} />}} />
       {renderItems(items)}
       {renderLessonNav(lessonNum, content)}
-      <PrettyTriangles className="full-height-2nd-column" />
+      <img className="full-height-2nd-column" src={trianglePath} />
+      {/*<PrettyTriangles className="full-height-2nd-column" />*/}
     </>
   );
 }

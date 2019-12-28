@@ -24,7 +24,7 @@ const routes = contentful
               case '/': {
                 return (
                   <Route key={slug} exact path={path}>
-                    <HomePage lessonNum={index} />
+                    <HomePage />
                   </Route>
                 );
               }

@@ -3,8 +3,11 @@ import React, {useRef, useEffect, useState} from 'react';
 const polyHeight = 75;
 const polyWidth = 75;
 
-const c1 = location.pathname === '/intro/' ? [205, 25, 0] : [0, 134, 205];
-const c2 = location.pathname === '/intro/' ? [255, 215, 0] : [45, 179, 74];
+// [205, 25, 0], [255, 215, 0] // red yellow
+// [0, 134, 205], [45, 179, 74] // green blue
+// [2, 108, 163], [108, 207, 228]
+const c1 =  [59, 112, 178];
+const c2 =  [65, 214, 195];
 const colorWiggle = 25;
 
 function singleColor(initial, final, frac, randomness) {
