@@ -15,7 +15,7 @@ const envPlugin = new webpack.DefinePlugin({
   __CONTENTFUL__: contentfulRc,
   'process.env.NODE_ENV': isProdBuild ? '"production"' : '"development"'
 });
-console.log('__CONTENTFUL__', contentfulRc);
+
 const basePluginConfig = {
   template      : './src/pageTemplate.html',
   hash          : false,
@@ -24,6 +24,7 @@ const basePluginConfig = {
     collapseWhitespace : true
   },
   inlineSource: '.css$',
+  env: isProdBuild ? 'production': 'development',
 };
 
 const customPages = [

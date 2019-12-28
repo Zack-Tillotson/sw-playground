@@ -4,6 +4,16 @@
   <title>SW Playground</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33622205-12"></script>
+  <script>
+    if('<%= htmlWebpackPlugin.options.env %>' === 'production') {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-33622205-12');
+    }
+  </script>
 </head>
 <body>
   <header class="page-nav" id="page-nav">

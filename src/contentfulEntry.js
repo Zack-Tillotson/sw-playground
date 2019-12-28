@@ -16,7 +16,7 @@ const routes = contentful
     ReactDOM.render(
       <BrowserRouter>
         <Switch>
-          {routes.map(({fields: {slug}}, index) => {
+          {routes.map(({fields: {slug = ''}}, index) => {
             let path = '/';
             if(slug) path += `${slug}/`;
 
