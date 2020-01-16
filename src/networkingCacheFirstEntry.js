@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import './contentfulEntry';
 
-import Page from './pages/networking';
-
-ReactDOM.render(<Page />, document.getElementById('app'));
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw-cache-first.js');
+}

@@ -1,11 +1,22 @@
-const cacheVersion = 'cache-first';
+const cacheVersion = 'sw-cache-first';
+
+const filesToPreload = [
+  'cashKitten.jpg',
+]
 
 self.addEventListener('install', event => {
-  event.waitUntil(self.skipWaiting());
+  console.log(cacheVersion, 'install');
+  event.waitUntil(
+    caches.open(cacheVersion)
+      .then(cache => cache.addAll(filesToPreload))
+  )
 });
 
 self.addEventListener('fetch', event => {
   console.log(cacheVersion, 'fetch');
+
+  if(!event.request.url.endsWith('.jpg')) return;
+
   event.respondWith(
     caches
       .open(cacheVersion)
