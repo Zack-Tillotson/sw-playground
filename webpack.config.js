@@ -28,20 +28,20 @@ const basePluginConfig = {
 };
 
 const customPages = [
-  // [entryName, route],
-  ['networkingCacheFirst', 'networking/cache-first'],
-  ['networkingNetworkFirst', 'networking/network-first'],
+  // Format: [entryName, route],
+  ['networkingCacheFirst', 'networking-cache-first'],
+  ['networkingNetworkFirst', 'networking-network-first'],
 ];
 
 const templatePlugin = [
   new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['aftStyles', 'contentful'],
+    chunks: ['aftStyles', 'contentful', 'coreSw'],
     filename: 'index.html',
   }),
   ...customPages.map(([entry, route]) => new HtmlWebpackPlugin({
     ...basePluginConfig,
-    chunks: ['aftStyles', entry],
+    chunks: ['aftStyles', 'contentful', entry],
     filename: `${route}/index.html`,
   })),
 ];
@@ -55,6 +55,7 @@ const config = {
   entry: {
     aftStyles: './src/aftStylesEntry',
     contentful: './src/contentfulEntry',
+    coreSw: './src/coreSwEntry',
     ...customPages.reduce((soFar, [entry]) => ({...soFar, [entry]: `./src/${entry}Entry`}), {}),
   },
   mode: isProdBuild ? 'production' : 'development',
