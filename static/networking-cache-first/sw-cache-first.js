@@ -1,7 +1,7 @@
 const cacheVersion = 'sw-cache-first';
 
 const filesToPreload = [
-  'cash-kitten.jpg',
+  '/networking/cash-kitten.jpg',
 ]
 
 self.addEventListener('install', event => {
